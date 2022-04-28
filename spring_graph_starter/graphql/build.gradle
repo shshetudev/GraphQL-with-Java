@@ -1,0 +1,35 @@
+plugins {
+	id 'org.springframework.boot' version '2.7.0-M3'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+}
+
+group = 'com.shshetudev'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+	maven { url 'https://repo.spring.io/milestone' }
+}
+
+dependencies {
+	implementation 'com.graphql-java-kickstart:graphql-spring-boot-starter:12.0.0'
+	implementation 'com.graphql-java-kickstart:altair-spring-boot-starter:11.1.0'
+//	implementation 'org.springframework.boot:spring-boot-starter'
+	implementation 'org.springframework.boot:spring-boot-starter-web:2.6.7'
+//	implementation 'org.springframework.boot:spring-boot-starter-graphql'
+//	implementation 'com.graphql-java:graphql-java'
+
+//	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'com.graphql-java-kickstart:graphql-spring-boot-starter-test:12.0.0'
+	testImplementation 'org.springframework:spring-webflux'
+//	testImplementation 'org.springframework.graphql:spring-graphql-test'
+	compileOnly 'org.projectlombok:lombok:1.18.24'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
+
+

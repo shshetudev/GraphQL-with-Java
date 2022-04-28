@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: graphql-java-kickstart
+#server:
+#  http2:
+#    enabled: true

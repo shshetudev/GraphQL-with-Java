@@ -14,7 +14,7 @@ services:
       - mongodb-database
 
   mongodb-database:
-    image: mongo:6.0
+    image: mongo:5.0.7
     networks:
       - spring-boot-graphql-network
     ports:

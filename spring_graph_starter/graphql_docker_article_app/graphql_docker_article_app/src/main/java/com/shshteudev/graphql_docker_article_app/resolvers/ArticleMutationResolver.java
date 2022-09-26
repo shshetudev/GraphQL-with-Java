@@ -1,0 +1,20 @@
+//package com.shshteudev.graphql_docker_article_app.resolvers;
+//
+//import com.coxautodev.graphql.tools.GraphQLMutationResolver;
+//import com.shshteudev.graphql_docker_article_app.models.Article;
+//import com.shshteudev.graphql_docker_article_app.repository.ArticleRepository;
+//import lombok.AllArgsConstructor;
+//import lombok.extern.slf4j.Slf4j;
+//import org.springframework.stereotype.Component;
+//
+//@Slf4j
+//@AllArgsConstructor
+//@Component
+//public class ArticleMutationResolver implements GraphQLMutationResolver {
+//    private ArticleRepository articleRepository;
+//
+//    public Article addArticle(final String title, final String text, final String thumbnail) {
+//        log.info("Add article: {}, {}, {}", title, text, thumbnail);
+//        return articleRepository.save(Article.builder().title(title).text(text).thumbnail(thumbnail).build());
+//    }
+//}

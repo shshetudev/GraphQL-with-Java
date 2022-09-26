@@ -1,0 +1,28 @@
+version: "3"
+
+services:
+  api-service:
+    image: spring-boot-with-graphql
+    build:
+      context: .
+      dockerfile: Dockerfile
+    networks:
+      - spring-boot-graphql-network
+    ports:
+      - "8082:8082"
+    depends_on:
+      - mongodb-database
+
+  mongodb-database:
+    image: mongo:6.0
+    networks:
+      - spring-boot-graphql-network
+    ports:
+      - "27018:27018"
+    environment: # never commit credentials to git
+      - MONGO_INITDB_ROOT_USERNAME=user
+      - MONGO_INITDB_ROOT_PASSWORD=password
+      - MONGO_INITDB_ROOT_DATABASE=test-graphql-db
+
+networks:
+  spring-boot-graphql-network:

@@ -1,0 +1,9 @@
+mutation create_person {
+    createPerson(person: {
+        id: 1
+        name: "Shahariar"
+    }) {
+        id
+        name
+    }
+}

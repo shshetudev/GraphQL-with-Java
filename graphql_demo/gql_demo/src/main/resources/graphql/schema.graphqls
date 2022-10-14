@@ -1,0 +1,43 @@
+type Person {
+    id: Int!
+    name: String!
+    address: [Address]
+    phone: String
+}
+
+type Address {
+    type: AddressType!
+    street: String
+}
+
+enum AddressType {
+    PRIMARY,
+    SECONDARY
+}
+
+# It will query person from database
+type Query {
+    person(id: Int!): Person
+}
+
+# Mutation
+# Input is used for adding person information in database
+input PersonInput {
+    id: Int!
+    name: String!
+}
+
+input AddressInput {
+    id: Int!
+    personId: Int!
+    type: AddressType!
+    street: String!
+}
+
+# Here we give input as person input and get the output as Person
+# Same goes for AddressInput and Address as well
+# Why we have to work with Input types? Ans: Because Mutation does not work directly with entity types. They return entity types but they work with input types.
+type Mutation {
+    createPerson(person: PersonInput): Person
+    createAddress(address: AddressInput): Address
+}
